@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crochê de Inverno: Do básico ao avançado</title>
+    <meta name="description" content="Curso de crochê completo por R$ 9,90. Aprenda do zero com vídeo-aulas, gráficos e receitas exclusivas. Comece hoje mesmo.">
+    
+    <!-- Google Fonts: Exatamente a Open Sans usada no Canva Original -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#003d20',    /* Verde Escuro Original */
+                            light: '#fbf5f0',   /* Fundo Creme Original */
+                            accent: '#ffde59',  /* Amarelo Botão Original */
+                            red: '#8c463f',     /* Vermelho/Marrom Original */
+                            text: '#000000'     /* Preto base */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'], /* Fonte aplicada globalmente */
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Ajuste simples para o acordeão FAQ */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+
+        /* Hero mobile igual ao print original: texto e imagem lado a lado, sem empilhar */
+        @media (max-width: 767px) {
+            body { overflow-x: hidden; }
+
+            #hero {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: flex-start !important;
+                justify-content: space-between !important;
+                gap: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 56px 12px 86px !important;
+                min-height: 425px !important;
+                position: relative !important;
+            }
+
+            #hero > div:first-child {
+                width: 51% !important;
+                flex: 0 0 51% !important;
+                text-align: left !important;
+                z-index: 2 !important;
+            }
+
+            #hero > div:last-child {
+                width: 49% !important;
+                flex: 0 0 49% !important;
+                margin-top: 0 !important;
+                align-items: flex-end !important;
+                justify-content: flex-start !important;
+                position: relative !important;
+                z-index: 1 !important;
+            }
+
+            #hero .inline-block.bg-brand-dark.text-white {
+                font-size: 8px !important;
+                line-height: 1 !important;
+                padding: 5px 8px !important;
+                border-radius: 7px !important;
+                margin-bottom: 6px !important;
+                letter-spacing: .02em !important;
+            }
+
+            #hero h1 { line-height: .94 !important; }
+            #hero h1 span:nth-child(1) {
+                font-size: 29px !important;
+                line-height: .95 !important;
+                margin-bottom: -2px !important;
+                letter-spacing: -.04em !important;
+            }
+            #hero h1 span:nth-child(2) {
+                font-size: 39px !important;
+                line-height: .92 !important;
+                margin-bottom: 8px !important;
+                letter-spacing: -.055em !important;
+            }
+            #hero h1 span:nth-child(3) {
+                font-size: 16px !important;
+                line-height: 1.12 !important;
+                letter-spacing: -.02em !important;
+            }
+
+            #hero p.text-\[18px\] {
+                font-size: 7.5px !important;
+                line-height: 1.25 !important;
+                margin-top: 8px !important;
+                max-width: 160px !important;
+            }
+
+            #hero .flex.items-start.justify-center {
+                justify-content: flex-start !important;
+                gap: 6px !important;
+                padding-top: 18px !important;
+                padding-bottom: 4px !important;
+                max-width: 180px !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            #hero .flex.items-start.justify-center > div {
+                width: 32px !important;
+                gap: 3px !important;
+            }
+
+            #hero .flex.items-start.justify-center > div > div {
+                width: 20px !important;
+                height: 20px !important;
+            }
+
+            #hero .flex.items-start.justify-center i {
+                font-size: 13px !important;
+            }
+
+            #hero .flex.items-start.justify-center span {
+                font-size: 3.7px !important;
+                line-height: 1.08 !important;
+            }
+
+            #hero .pt-4.flex.flex-col {
+                padding-top: 10px !important;
+                align-items: flex-start !important;
+            }
+
+            #hero .pt-4.flex.flex-col > p {
+                font-size: 16px !important;
+                line-height: 1 !important;
+                margin-bottom: 2px !important;
+            }
+
+            #hero .flex.items-baseline.justify-center {
+                justify-content: flex-start !important;
+                margin-top: -2px !important;
+                margin-bottom: 8px !important;
+            }
+
+            #hero .flex.items-baseline.justify-center span:first-child {
+                font-size: 17px !important;
+                top: -7px !important;
+                margin-right: 4px !important;
+            }
+
+            #hero .flex.items-baseline.justify-center span:last-child {
+                font-size: 45px !important;
+                letter-spacing: -.05em !important;
+            }
+
+            #hero a[href="#checkout"] {
+                width: auto !important;
+                max-width: none !important;
+                font-size: 10px !important;
+                line-height: 1 !important;
+                padding: 6px 8px !important;
+                border-radius: 6px !important;
+                box-shadow: none !important;
+            }
+
+            #hero .mt-4.text-\[11px\] {
+                font-size: 3.9px !important;
+                line-height: 1 !important;
+                margin-top: 5px !important;
+            }
+
+            #hero > div:last-child > div {
+                max-width: none !important;
+                width: 210px !important;
+                transform: translateX(-8px) translateY(3px) !important;
+            }
+
+            #hero > div:last-child img:first-child {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: contain !important;
+                object-position: bottom center !important;
+            }
+
+            #hero > div:last-child .grid {
+                width: 165px !important;
+                margin-left: auto !important;
+                margin-top: -10px !important;
+                gap: 2px !important;
+            }
+        }
+
+    </style>
+</head>
+<body class="font-sans text-brand-text bg-brand-light antialiased selection:bg-brand-dark selection:text-white">
+
+    <!-- Topbar Banner -->
+    <div class="bg-brand-dark text-white text-center py-2 px-4 text-xs md:text-sm font-bold tracking-widest uppercase sticky top-0 z-50">
+        Oferta por tempo limitado! Não perca!
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-12 pb-16 px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center gap-10">
+        
+        <!-- Left Copy (Idêntico ao Print) -->
+        <div class="flex-1 text-center lg:text-left">
+            
+            <div class="inline-block bg-brand-dark text-white px-5 py-2 rounded-[20px] text-[15px] font-bold uppercase tracking-wider mb-4">
+                Curso Online
+            </div>
+            
+            <h1 class="font-sans leading-[1.05] mt-0">
+                <span class="text-brand-red font-bold text-[55px] md:text-[70px] lg:text-[85px] block mb-[-12px] tracking-tight">Aprenda</span>
+                <span class="text-brand-dark font-extrabold text-[65px] md:text-[85px] lg:text-[105px] block mb-2 uppercase tracking-tighter">CROCHÊ</span>
+                <span class="text-brand-red font-bold text-[28px] md:text-[38px] lg:text-[42px] block uppercase leading-[1.1] tracking-tight">DE INVERNO DO ZERO<br/>A CASACOS INCRÍVEIS!</span>
+            </h1>
+            
+            <p class="text-[18px] md:text-[20px] text-brand-text max-w-lg mx-auto lg:mx-0 leading-relaxed font-normal mt-4">
+                Do básico ao avançado, aprenda a criar<br/>
+                casacos, cardigãs, blusões de lã e muito mais!
+            </p>
+            
+            <!-- 4 Icons Horizontal (Layout exato do print) -->
+            <div class="flex items-start justify-center lg:justify-start gap-2 md:gap-8 pt-8 pb-4 max-w-[360px] md:max-w-none mx-auto lg:mx-0">
+                <div class="flex flex-col items-center w-[75px] md:w-[85px] text-center gap-2 md:gap-3">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-gray-300 flex items-center justify-center bg-transparent">
+                        <i class="ph ph-yarn text-2xl md:text-3xl text-brand-text"></i>
+                    </div>
+                    <span class="text-[8px] md:text-[9px] font-bold leading-tight uppercase">Passo a passo<br/>fácil e<br/>descomplicado</span>
+                </div>
+                <div class="flex flex-col items-center w-[75px] md:w-[85px] text-center gap-2 md:gap-3">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-gray-300 flex items-center justify-center bg-transparent">
+                        <i class="ph ph-play-circle text-2xl md:text-3xl text-brand-text"></i>
+                    </div>
+                    <span class="text-[8px] md:text-[9px] font-bold leading-tight uppercase">Aulas práticas<br/>e objetivas</span>
+                </div>
+                <div class="flex flex-col items-center w-[75px] md:w-[85px] text-center gap-2 md:gap-3">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-gray-300 flex items-center justify-center bg-transparent">
+                        <i class="ph ph-chats-circle text-2xl md:text-3xl text-brand-text"></i>
+                    </div>
+                    <span class="text-[8px] md:text-[9px] font-bold leading-tight uppercase">Suporte e<br/>comunidade<br/>exclusiva</span>
+                </div>
+                <div class="flex flex-col items-center w-[75px] md:w-[85px] text-center gap-2 md:gap-3">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full border border-gray-300 flex items-center justify-center bg-transparent">
+                        <i class="ph ph-gift text-2xl md:text-3xl text-brand-text"></i>
+                    </div>
+                    <span class="text-[8px] md:text-[9px] font-bold leading-tight uppercase">Bônus<br/>e materiais de<br/>apoio</span>
+                </div>
+            </div>
+            
+            <!-- Pricing & Button (Idêntico ao Print) -->
+            <div class="pt-4 flex flex-col items-center lg:items-start">
+                <p class="font-bold text-[32px] md:text-[36px] text-brand-text mb-0 uppercase">SÓ HOJE</p>
+                <div class="flex items-baseline justify-center lg:justify-start text-brand-text mb-6 mt-[-10px]">
+                    <span class="font-bold text-4xl md:text-5xl mr-3 relative top-[-15px]">R$</span>
+                    <span class="font-extrabold text-[100px] md:text-[130px] leading-none tracking-tighter">9,90</span>
+                </div>
+                
+                <a href="#checkout" class="inline-block w-full max-w-[420px] bg-brand-accent hover:bg-yellow-400 text-black font-extrabold text-[22px] md:text-[26px] py-4 px-6 rounded-full text-center transition-transform hover:scale-105 shadow-md">
+                    QUERO COMEÇAR AGORA
+                </a>
+                
+                <div class="mt-4 text-[11px] md:text-[12px] font-bold text-brand-text">
+                    Compra segura &bull; Acesso vitalício &bull; Garantia de 7 dias
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Image Mockup -->
+        <div class="flex-1 w-full flex flex-col items-center lg:items-end mt-10 lg:mt-0">
+            <div class="w-full max-w-[450px] flex flex-col gap-0">
+                <!-- Imagem Principal (sem bordas brancas, sangrando) -->
+                <!-- Usei a cor fbf5f0 no placeholder para provar que a caixa sumiu e o fundo esta transparente -->
+                <div class="w-full">
+                    <img src="assets/imagem1.webp" alt="Modelo Principal Inverno" class="w-full h-auto object-cover block">
+                </div>
+                
+                <!-- 4 Imagens Menores (com fundo branco para criar as linhas divisórias exatas do print) -->
+                <div class="grid grid-cols-4 gap-[2px] bg-white">
+                    <img src="assets/imagem2.webp" alt="Look Inverno 1" class="w-full h-auto object-cover aspect-[3/4] block">
+                    <img src="assets/imagem3.webp" alt="Look Inverno 2" class="w-full h-auto object-cover aspect-[3/4] block">
+                    <img src="assets/imagem4.webp" alt="Look Inverno 3" class="w-full h-auto object-cover aspect-[3/4] block">
+                    <img src="assets/imagem5.webp" alt="Look Inverno 4" class="w-full h-auto object-cover aspect-[3/4] block">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transforme Linhas (Fundo Branco como na referência) -->
+    <section class="bg-white py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-[32px] md:text-[45px] font-extrabold text-center text-black mb-14 uppercase tracking-tight">
+                TRANSFORME LINHAS EM RENDA EXTRA!
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+                <div class="flex items-start md:items-center gap-3">
+                    <i class="ph-fill ph-check-circle text-[30px] text-brand-dark flex-shrink-0 mt-1 md:mt-0"></i>
+                    <p class="text-[16px] text-brand-text leading-snug">Mesmo que voce nunca tenha pegado em uma agulha pesada.</p>
+                </div>
+                <div class="flex items-start md:items-center gap-3">
+                    <i class="ph-fill ph-check-circle text-[30px] text-brand-dark flex-shrink-0 mt-1 md:mt-0"></i>
+                    <p class="text-[16px] text-brand-text leading-snug">Aprenda no seu tempo, de onde estiver e quando quiser.</p>
+                </div>
+                <div class="flex items-start md:items-center gap-3">
+                    <i class="ph-fill ph-check-circle text-[30px] text-brand-dark flex-shrink-0 mt-1 md:mt-0"></i>
+                    <p class="text-[16px] text-brand-text leading-snug">Técnicas simples para criar peças modernas e vendáveis no frio.</p>
+                </div>
+                <div class="flex items-start md:items-center gap-3">
+                    <i class="ph-fill ph-check-circle text-[30px] text-brand-dark flex-shrink-0 mt-1 md:mt-0"></i>
+                    <p class="text-[16px] text-brand-text leading-snug">Comece hoje e fature alto na alta temporada de inverno!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Que Você Vai Aprender (Fundo Creme) -->
+    <section class="py-16 bg-brand-light">
+        <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <h2 class="text-[32px] md:text-[45px] font-extrabold text-black uppercase tracking-tight mb-4">
+                O QUE VOCÊ VAI APRENDER
+            </h2>
+            <div class="flex items-center justify-center gap-4 mb-14">
+                <div class="h-[1px] bg-black w-24 md:w-32"></div>
+                <i class="ph-fill ph-heart text-black text-xl"></i>
+                <div class="h-[1px] bg-black w-24 md:w-32"></div>
+            </div>
+
+            <!-- Ícones Exatamente Iguais à referência (5 colunas) -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center items-start">
+                <div class="flex flex-col items-center">
+                    <div class="bg-white w-[100px] h-[100px] rounded-full flex items-center justify-center shadow-sm mb-4 border border-gray-100">
+                         <i class="ph ph-yarn text-[50px] text-black"></i>
+                    </div>
+                    <h3 class="font-bold text-[12px] uppercase mb-2">DO ZERO AO AVANÇADO</h3>
+                    <p class="text-[12px] text-brand-text leading-snug">Aprenda todas as técnicas mesmo que esteja começando agora.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-white w-[100px] h-[100px] rounded-full flex items-center justify-center shadow-sm mb-4 border border-gray-100">
+                         <i class="ph ph-coat text-[50px] text-black"></i>
+                    </div>
+                    <h3 class="font-bold text-[12px] uppercase mb-2">VÁRIOS MODELOS EXCLUSIVOS</h3>
+                    <p class="text-[12px] text-brand-text leading-snug">Casacos, cardigãs, blusões de lã, golas, gorros e muito mais!</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-white w-[100px] h-[100px] rounded-full flex items-center justify-center shadow-sm mb-4 border border-gray-100">
+                         <i class="ph ph-steps text-[50px] text-black"></i>
+                    </div>
+                    <h3 class="font-bold text-[12px] uppercase mb-2">PASSO A PASSO DETALHADO</h3>
+                    <p class="text-[12px] text-brand-text leading-snug">Aulas práticas, didáticas e fáceis de acompanhar e tecer.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-white w-[100px] h-[100px] rounded-full flex items-center justify-center shadow-sm mb-4 border border-gray-100">
+                         <i class="ph ph-money text-[50px] text-brand-dark"></i>
+                    </div>
+                    <h3 class="font-bold text-[12px] uppercase mb-2">RENDA EXTRA COM CROCHÊ</h3>
+                    <p class="text-[12px] text-brand-text leading-snug">Aprenda a precificar, divulgar e vender suas peças quentinhas.</p>
+                </div>
+                <div class="flex flex-col items-center col-span-2 md:col-span-1 mx-auto">
+                    <div class="bg-white w-[100px] h-[100px] rounded-full flex items-center justify-center shadow-sm mb-4 border border-gray-100">
+                         <i class="ph ph-users text-[50px] text-black"></i>
+                    </div>
+                    <h3 class="font-bold text-[12px] uppercase mb-2">COMUNIDADE E SUPORTE</h3>
+                    <p class="text-[12px] text-brand-text leading-snug">Tire dúvidas e tenha apoio sempre que precisar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Roupas Inverno (Fundo Creme) -->
+    <section class="py-16 bg-brand-light overflow-hidden">
+        <div class="max-w-[1100px] mx-auto px-4 text-center">
+            <h2 class="text-[28px] md:text-[40px] font-extrabold text-black mb-6 uppercase tracking-tight">
+                CRIE PEÇAS LINDAS COMO ESSAS E MUITO MAIS!
+            </h2>
+            <p class="text-lg md:text-[22px] text-black max-w-4xl mx-auto mb-12 leading-relaxed">
+                Crochê de Inverno são <strong>mais de 120 Vídeo aulas passo a passo</strong>, e ainda garanta sua apostila digital com mais de <strong>750 Receitas Exclusivas!</strong>
+            </p>
+
+            <!-- Apenas 4 imagens -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 max-w-[900px] mx-auto">
+                <div>
+                    <img src="assets/imagem6.webp" class="w-full rounded-[25px] object-cover aspect-[2/3] shadow-sm mb-3" alt="Casaco">
+                    <p class="text-[13px] font-semibold text-black">Casaco Aspen</p>
+                </div>
+                <div>
+                    <img src="assets/imagem7.webp" class="w-full rounded-[25px] object-cover aspect-[2/3] shadow-sm mb-3" alt="Cardigã">
+                    <p class="text-[13px] font-semibold text-black">Cardigã Nevasca</p>
+                </div>
+                <div>
+                    <img src="assets/imagem8.webp" class="w-full rounded-[25px] object-cover aspect-[2/3] shadow-sm mb-3" alt="Blusão">
+                    <p class="text-[13px] font-semibold text-black">Blusão Europeu</p>
+                </div>
+                <div>
+                    <img src="assets/imagem9.webp" class="w-full rounded-[25px] object-cover aspect-[2/3] shadow-sm mb-3" alt="Poncho">
+                    <p class="text-[13px] font-semibold text-black">Poncho de Frio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista do que recebe ao se inscrever -->
+    <section class="py-16 bg-white">
+        <div class="max-w-[900px] mx-auto px-4 text-center">
+            <h2 class="text-[24px] md:text-[28px] font-bold text-black mb-4">
+                Ao se inscrever no curso você terá acesso a mais de 750 Receitas Exclusivas
+            </h2>
+            <p class="text-[22px] text-black mb-10">
+                Veja o que você vai receber ao entrar hoje:
+            </p>
+
+            <div class="max-w-[760px] mx-auto text-left grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                <div class="flex items-start gap-3 bg-brand-light rounded-[18px] p-5">
+                    <i class="ph-fill ph-check-circle text-brand-dark text-[26px] mt-1 flex-shrink-0"></i>
+                    <p class="text-[17px] leading-snug"><strong>Mais de 120 vídeo aulas</strong> passo a passo, do básico ao avançado.</p>
+                </div>
+                <div class="flex items-start gap-3 bg-brand-light rounded-[18px] p-5">
+                    <i class="ph-fill ph-check-circle text-brand-dark text-[26px] mt-1 flex-shrink-0"></i>
+                    <p class="text-[17px] leading-snug"><strong>Mais de 750 receitas exclusivas</strong> para criar peças variadas.</p>
+                </div>
+                <div class="flex items-start gap-3 bg-brand-light rounded-[18px] p-5">
+                    <i class="ph-fill ph-check-circle text-brand-dark text-[26px] mt-1 flex-shrink-0"></i>
+                    <p class="text-[17px] leading-snug"><strong>Apostila digital completa</strong> para consultar quando quiser.</p>
+                </div>
+                <div class="flex items-start gap-3 bg-brand-light rounded-[18px] p-5">
+                    <i class="ph-fill ph-check-circle text-brand-dark text-[26px] mt-1 flex-shrink-0"></i>
+                    <p class="text-[17px] leading-snug"><strong>Acesso vitalício</strong> pelo celular, computador ou tablet.</p>
+                </div>
+                <div class="flex items-start gap-3 bg-brand-light rounded-[18px] p-5">
+                    <i class="ph-fill ph-check-circle text-brand-dark text-[26px] mt-1 flex-shrink-0"></i>
+                    <p class="text-[17px] leading-snug"><strong>Suporte pelo WhatsApp</strong> para tirar dúvidas durante o aprendizado.</p>
+                </div>
+                <div class="flex items-start gap-3 bg-brand-light rounded-[18px] p-5">
+                    <i class="ph-fill ph-check-circle text-brand-dark text-[26px] mt-1 flex-shrink-0"></i>
+                    <p class="text-[17px] leading-snug"><strong>9 bônus especiais</strong> para vender, precificar e cuidar das peças.</p>
+                </div>
+            </div>
+            
+            <div class="mt-14 text-center">
+                <h3 class="text-[28px] md:text-[36px] font-extrabold text-black mb-8 uppercase tracking-tight">
+                    TUDO ISSO, E MUITAS OUTRAS RECEITAS!
+                </h3>
+                <a href="#checkout" class="inline-block w-full max-w-[500px] bg-brand-accent hover:bg-yellow-400 text-black font-extrabold text-xl md:text-[24px] py-4 px-8 rounded-full transition-transform hover:scale-105 shadow-md">
+                    QUERO COMEÇAR AGORA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bônus Section Inverno (Fundo Creme conforme os prints) -->
+    <section class="py-20 bg-brand-light">
+        <div class="max-w-[1000px] mx-auto px-4">
+            <h2 class="text-[32px] md:text-[45px] font-bold text-center text-black mb-16 leading-tight">
+                Se inscrevendo hoje você receberá 9 bônus!
+            </h2>
+
+            <!-- Grid 3x3 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+                <!-- Bonus 1 -->
+                <div class="flex flex-col text-center">
+                    <h3 class="text-[22px] font-bold mb-4 min-h-[60px] leading-tight">Aulão de costura<br/>invisível para blusões</h3>
+                    <img src="assets/imagem10.webp" alt="Bonus 1" class="w-full object-cover mb-4 aspect-[4/3] rounded-sm">
+                    <p class="text-[15px] text-black text-justify leading-relaxed">O segredo pra deixar a emenda dos seus casacos pesados perfeita, com cara de peça de loja (e cobrar mais por isso).</p>
+                </div>
+                <!-- Bonus 2 -->
+                <div class="flex flex-col text-center">
+                    <h3 class="text-[22px] font-bold mb-4 min-h-[60px] leading-tight">Calculadora de<br/>precificação</h3>
+                    <img src="assets/imagem11.webp" alt="Bonus 2" class="w-full object-cover mb-4 aspect-[4/3] rounded-sm">
+                    <p class="text-[15px] text-black text-justify leading-relaxed">Uma ferramenta prática: insira seus custos de lã pesada e veja o preço ideal da sua peça com base na margem desejada.</p>
+                </div>
+                <!-- Bonus 3 -->
+                <div class="flex flex-col text-center">
+                    <h3 class="text-[22px] font-bold mb-4 min-h-[60px] leading-tight">Como lavar suas<br/>peças de crochê (lã)</h3>
+                    <img src="assets/imagem12.webp" alt="Bonus 3" class="w-full object-cover mb-4 aspect-[4/3] rounded-sm">
+                    <p class="text-[15px] text-black text-justify leading-relaxed">O jeito certo de manter suas criações de inverno sempre lindas, sem encolher, deformar ou encher de bolinhas.</p>
+                </div>
+                <!-- Bonus 4 -->
+                <div class="flex flex-col text-center">
+                    <h3 class="text-[22px] font-bold mb-4 min-h-[60px] leading-tight">Como vender seu<br/>crochê de inverno</h3>
+                    <img src="assets/imagem13.webp" alt="Bonus 4" class="w-full object-cover mb-4 aspect-[4/3] rounded-sm">
+                    <p class="text-[15px] text-black text-justify leading-relaxed">Estratégias para conquistar clientes, vender no digital e faturar alto na alta temporada de inverno.</p>
+                </div>
+                <!-- Bonus 5 -->
+                <div class="flex flex-col text-center">
+                    <h3 class="text-[22px] font-bold mb-4 min-h-[60px] leading-tight">Aprenda a Ler<br/>Gráficos</h3>
+                    <img src="assets/imagem14.webp" alt="Bonus 5" class="w-full object-cover mb-4 aspect-[4/3] rounded-sm">
+                    <p class="text-[15px] text-black text-justify leading-relaxed">Domine os símbolos universais e aprenda a interpretar gráficos complexos de cardigãs com clareza para evoluir rápido.</p>
+                </div>
+                <!-- Bonus 6 -->
+                <div class="flex flex-col text-center">
+                    <h3 class="text-[22px] font-bold mb-4 min-h-[60px] leading-tight">Tecer Fios Grossos<br/>Sem Dor</h3>
+                    <img src="assets/imagem15.webp" alt="Bonus 6" class="w-full object-cover mb-4 aspect-[4/3] rounded-sm">
+                    <p class="text-[15px] text-black text-justify leading-relaxed">Tecer peças de inverno cansa mais rápido. Aprenda posturas, alongamentos e truques para crochetar sem sofrimento.</p>
+                </div>
+                <!-- Bonus 7 -->
+                <div class="flex flex-col text-center">
+                    <h3 class="text-[22px] font-bold mb-4 min-h-[60px] leading-tight">Como estruturar casacos<br/>perfeitos</h3>
+                    <img src="assets/imagem16.webp" alt="Bonus 7" class="w-full object-cover mb-4 aspect-[4/3] rounded-sm">
+                    <p class="text-[15px] text-black text-justify leading-relaxed">As dicas certeiras para garantir que peças pesadas fiquem com um caimento perfeito e impecável no corpo.</p>
+                </div>
+                <!-- Bonus 8 -->
+                <div class="flex flex-col text-center">
+                    <h3 class="text-[22px] font-bold mb-4 min-h-[60px] leading-tight">Grupo exclusivo de<br/>alunas</h3>
+                    <img src="assets/imagem17.webp" alt="Bonus 8" class="w-full object-cover mb-4 aspect-[4/3] rounded-sm">
+                    <p class="text-[15px] text-black text-justify leading-relaxed">Tire dúvidas sobre medidas, fios e agulhas, compartilhe ideias e receba apoio direto de quem está na mesma jornada.</p>
+                </div>
+                <!-- Bonus 9 -->
+                <div class="flex flex-col text-center">
+                    <h3 class="text-[22px] font-bold mb-4 min-h-[60px] leading-tight">Aula de vendas no<br/>WhatsApp</h3>
+                    <img src="assets/imagem18.webp" alt="Bonus 9" class="w-full object-cover mb-4 aspect-[4/3] rounded-sm">
+                    <p class="text-[15px] text-black text-justify leading-relaxed">Como vender suas toucas e golas com estratégia pelo WhatsApp, mesmo começando do zero neste inverno.</p>
+                </div>
+            </div>
+            
+            <div class="mt-20 text-center">
+                 <a href="#checkout" class="inline-block w-full max-w-[500px] bg-brand-accent hover:bg-yellow-400 text-black font-extrabold text-xl md:text-[24px] py-4 px-8 rounded-full transition-transform hover:scale-105 shadow-md">
+                    QUERO COMEÇAR AGORA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Inverno (Fundo Creme) -->
+    <section class="py-16 bg-brand-light">
+        <div class="max-w-[1000px] mx-auto px-4 text-center">
+            
+            <div class="mb-14">
+                <p class="text-[18px] font-bold uppercase mb-1 flex justify-center items-center gap-2 text-black tracking-wide">
+                    <i class="ph ph-heart text-brand-red"></i> O QUE NOSSAS ALUNAS
+                </p>
+                <h2 class="text-[50px] md:text-[70px] font-extrabold text-brand-dark tracking-tighter leading-none mb-0">
+                    ESTÃO DIZENDO
+                </h2>
+                <!-- Letra cursiva vermelha como no original -->
+                <h3 class="text-4xl md:text-5xl italic text-brand-red lowercase mt-1 mb-4 font-serif" style="font-family: 'Playfair Display', serif;">
+                    sobre o curso
+                </h3>
+                
+                <div class="inline-block bg-brand-dark text-white px-6 py-2 rounded-full text-[13px] font-medium mt-2 tracking-wide shadow-sm">
+                    <i class="ph-fill ph-heart text-white mr-1"></i> Histórias reais de quem transformou a vida com o crochê <span class="italic text-brand-accent">do básico ao avançado!</span>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                <!-- Card 1 -->
+                <div class="bg-brand-light p-6 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-200 flex flex-col h-full relative">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="assets/imagem19.webp" class="w-[50px] h-[50px] rounded-full object-cover" alt="Avatar">
+                        <div>
+                            <h4 class="font-bold text-brand-red text-sm">Jéssica, <span class="text-black font-semibold">28 anos</span></h4>
+                            <p class="text-[11px] text-gray-500">Curitiba - PR</p>
+                            <div class="flex text-[#facc15] text-xs mt-0.5">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-[13px] text-black flex-grow relative leading-relaxed font-semibold pl-6 pr-4">
+                        <span class="text-brand-red text-5xl absolute -left-1 -top-4 font-serif leading-none">“</span>
+                        Estou amando o curso! As aulas são muito claras. Fiz meu primeiro casaco pesado de lã e fiquei muito orgulhosa do caimento perfeito!
+                        <span class="text-brand-red text-5xl absolute -right-0 -bottom-6 font-serif leading-none">”</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-light p-6 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-200 flex flex-col h-full relative">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="assets/imagem20.webp" class="w-[50px] h-[50px] rounded-full object-cover" alt="Avatar">
+                        <div>
+                            <h4 class="font-bold text-brand-red text-sm">Amanda, <span class="text-black font-semibold">32 anos</span></h4>
+                            <p class="text-[11px] text-gray-500">São Paulo - SP</p>
+                            <div class="flex text-[#facc15] text-xs mt-0.5">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-[13px] text-black flex-grow relative leading-relaxed font-semibold pl-6 pr-4">
+                        <span class="text-brand-red text-5xl absolute -left-1 -top-4 font-serif leading-none">“</span>
+                        Fiz meu primeiro cardigã longo e mal postei a foto, uma amiga já comprou! Nunca imaginei que conseguiria tecer algo tão grande sozinha. A professora explica com muito carinho.
+                        <span class="text-brand-red text-5xl absolute -right-0 -bottom-6 font-serif leading-none">”</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-light p-6 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-200 flex flex-col h-full relative">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="assets/imagem21.webp" class="w-[50px] h-[50px] rounded-full object-cover" alt="Avatar">
+                        <div>
+                            <h4 class="font-bold text-brand-red text-sm">Larissa, <span class="text-black font-semibold">26 anos</span></h4>
+                            <p class="text-[11px] text-gray-500">Gramado - RS</p>
+                            <div class="flex text-[#facc15] text-xs mt-0.5">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-[13px] text-black flex-grow relative leading-relaxed font-semibold pl-6 pr-4">
+                        <span class="text-brand-red text-5xl absolute -left-1 -top-4 font-serif leading-none">“</span>
+                        Eu tinha muito medo de pegar encomendas grandes de inverno por causa das costuras. O aulão de acabamento salvou minha vida! Peças perfeitas agora.
+                        <span class="text-brand-red text-5xl absolute -right-0 -bottom-6 font-serif leading-none">”</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Stats (Idêntico ao print) -->
+            <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 py-6 border-t border-b border-gray-200 max-w-4xl mx-auto">
+                <div class="flex items-center gap-4">
+                    <i class="ph-fill ph-users-three text-5xl text-brand-red"></i>
+                    <div class="text-left">
+                        <p class="font-extrabold text-brand-red tracking-wide text-[16px] mb-0">MAIS DE 5.000 ALUNAS</p>
+                        <p class="text-[11px] text-black font-bold tracking-wide">JÁ TRANSFORMARAM SUAS VIDAS COM O NOSSO CURSO!</p>
+                    </div>
+                </div>
+                <div class="hidden md:block w-px h-10 bg-gray-300"></div>
+                <div class="flex items-center gap-4">
+                    <i class="ph-fill ph-chat-circle-text text-5xl text-brand-red"></i>
+                    <div class="text-left">
+                        <p class="font-extrabold text-brand-red tracking-wide text-[14px] mb-0">Curso com avaliação 4,9/5</p>
+                        <div class="flex items-center gap-2 mt-1">
+                             <div class="flex text-[#facc15] text-[13px]">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star-half"></i>
+                            </div>
+                            <span class="text-[11px] text-gray-500 font-semibold">(mais de 1.500 avaliações)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantia (Fundo Creme conforme o print) -->
+    <section class="py-16 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-[32px] md:text-[45px] font-extrabold text-black mb-10">
+                Risco Zero com Garantia de 7 Dias!
+            </h2>
+            
+            <div class="flex justify-center mb-10">
+                 <!-- Selo em CSS puro simulando o design da imagem pesada -->
+                 <div class="relative w-52 h-52 flex items-center justify-center">
+                     <div class="absolute inset-0 bg-brand-accent rounded-full shadow-lg flex items-center justify-center" style="clip-path: polygon(50% 0%, 61% 4%, 73% 2%, 82% 11%, 92% 13%, 97% 24%, 100% 35%, 98% 46%, 100% 57%, 94% 67%, 91% 78%, 81% 85%, 72% 94%, 60% 95%, 50% 100%, 39% 95%, 28% 94%, 19% 85%, 9% 78%, 5% 67%, 0% 57%, 2% 46%, 0% 35%, 3% 24%, 8% 13%, 18% 11%, 27% 2%, 39% 4%); transform: scale(1.15);"></div>
+                     <div class="w-[160px] h-[160px] bg-[#1a1a1a] rounded-full z-10 flex flex-col items-center justify-center border-4 border-[#c59a3c]">
+                         <span class="text-white text-[14px] tracking-[0.2em] font-semibold mb-1 uppercase">RISCO</span>
+                         <span class="text-white text-[55px] font-black leading-none tracking-tighter uppercase">ZERO</span>
+                     </div>
+                     <!-- Faixa de Garantia CSS -->
+                     <div class="absolute -bottom-2 z-20 bg-[#e5534b] text-white font-bold text-[14px] tracking-wider uppercase py-2 px-8 shadow-md" style="clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%); width: 140%;">
+                         Garantia de 7 Dias
+                     </div>
+                 </div>
+            </div>
+
+            <p class="text-[20px] text-black leading-relaxed font-normal md:px-10">
+                Nos importamos muito com as nossas alunas, então sempre damos o nosso melhor a vocês, e por isso não temos histórico de reembolso, mas se em 7 dias você não gostar do conteúdo ou se por algum motivo algo não te agradou, devolveremos 100% do seu dinheiro de volta. Basta nos enviar um e-mail solicitando seu reembolso.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Final e Footer (Fundo Branco como na referência) -->
+    <section class="pt-16 pb-12 bg-white text-center">
+        <div class="max-w-[1000px] mx-auto px-4">
+            
+            <h2 class="text-[36px] md:text-[50px] font-extrabold text-black mb-8">
+                Pronta pra aprender crochê de verdade?
+            </h2>
+            <p class="text-[24px] md:text-[28px] text-black mb-10 leading-snug font-normal">
+                Aprenda Crochê do básico ao avançado de R$ 97,90 por um<br class="hidden md:block"/>preço especial só essa semana!
+            </p>
+
+            <div class="flex items-baseline justify-center text-black mb-8">
+                <span class="font-bold text-5xl md:text-6xl mr-2 relative top-[-10px]">R$</span>
+                <span class="font-extrabold text-[100px] md:text-[130px] leading-none tracking-tighter">9,90</span>
+            </div>
+
+            <div class="text-[24px] md:text-[26px] font-bold text-black space-y-2 mb-10">
+                <p>Com aulas claras e suporte de verdade</p>
+                <p>Acesso VITÁLICIO.</p>
+                <p>Mais de 120 vídeo aulas + 9 Bônus</p>
+            </div>
+
+            <div class="flex justify-center mb-10">
+                 <a href="#checkout" class="inline-block w-full max-w-[500px] bg-brand-accent hover:bg-yellow-400 text-black font-extrabold text-[24px] md:text-[28px] py-4 px-8 rounded-full transition-transform hover:scale-105 shadow-md">
+                    QUERO COMEÇAR AGORA
+                </a>
+            </div>
+
+            <!-- Security Badges Exatos do Print -->
+            <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-16 text-black">
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-seal-check text-[45px] text-gray-700"></i>
+                    <div class="text-left leading-tight font-bold text-[14px]">Compra<br/>Segura</div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-medal text-[45px] text-gray-700"></i>
+                    <div class="text-left leading-tight font-bold text-[14px]">Satisfação<br/>Garantida</div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-lock-key text-[45px] text-gray-700"></i>
+                    <div class="text-left leading-tight font-bold text-[14px]">Privacidade<br/>Protegida</div>
+                </div>
+            </div>
+
+            <div class="text-[14px] md:text-[16px] font-bold text-black mb-3">
+                Compra segura &bull; Acesso vitalício &bull; Garantia de 7 dias
+            </div>
+            <div class="text-[14px] md:text-[16px] font-bold text-black mb-4">
+                Dúvidas? Fale com a gente no WhatsApp
+            </div>
+            <div class="text-[13px] text-black mb-12">
+                Feito com carinho por quem já passou pelas mesmas dificuldades que você.
+            </div>
+
+            <!-- Redes Sociais Centrais -->
+            <div class="flex justify-center gap-6 mb-16">
+                 <a href="https://www.instagram.com/linhagemcroche/" target="_blank" class="flex items-center gap-2 text-black hover:text-brand-dark transition font-semibold text-sm">
+                    <i class="ph-fill ph-instagram-logo text-2xl text-[#E1306C]"></i> @linhagemcroche
+                </a>
+                <a href="https://wa.me/5571984739492" target="_blank" class="flex items-center gap-2 text-black hover:text-brand-dark transition font-semibold text-sm">
+                    <i class="ph-fill ph-whatsapp-logo text-2xl text-[#25D366]"></i> Suporte WhatsApp
+                </a>
+            </div>
+
+            <!-- Perguntas Frequentes (Sem Acordeão, como na imagem de referência) -->
+            <div class="text-left max-w-[1000px] mx-auto text-[16px] md:text-[18px] text-black border-t border-gray-200 pt-12 pb-12 leading-relaxed space-y-6">
+                <h3 class="font-extrabold text-[28px] mb-8">Perguntas Frequentes</h3>
+                
+                <div>
+                    <strong class="block mb-1 font-bold">Nunca fiz crochê na vida. Esse curso é pra mim?</strong>
+                    Sim! O curso foi feito especialmente para iniciantes. As aulas são bem passo a passo, como se eu estivesse sentada ao seu lado, explicando tudo com calma.
+                </div>
+                <div>
+                    <strong class="block mb-1 font-bold">Por quanto tempo vou ter acesso ao curso?</strong>
+                    O acesso é vitalício. Você pode assistir quantas vezes quiser, no seu ritmo e no horário que for melhor pra você.
+                </div>
+                <div>
+                    <strong class="block mb-1 font-bold">Posso assistir pelo celular?</strong>
+                    Sim! As aulas funcionam no celular, computador ou tablet. É só ter internet e acessar com seu login.
+                </div>
+                <div>
+                    <strong class="block mb-1 font-bold">Vou ter suporte se tiver dúvidas?</strong>
+                    Sim! Você pode tirar dúvidas diretamente comigo pelo WhatsApp. Não vai ficar sozinha!
+                </div>
+                <div>
+                    <strong class="block mb-1 font-bold">Até quando a inscrição estará com o preço promocional?</strong>
+                    Infelizmente o preço promocional é dado apenas para um número curto de pessoas a se inscreverem, logo após atingir a cota, retorna ao preço original, então essa é a oportunidade se você ainda está vendo pelo preço promocional, porque provavelmente a qualquer hora ou minuto as vagas com valor promocional estarão preenchidas e talvez não haja mais vagas.
+                </div>
+                <div>
+                    <strong class="block mb-1 font-bold">E se eu não gostar?</strong>
+                    Você tem 7 dias de garantia. Se não gostar do curso por qualquer motivo, é só pedir o reembolso. Simples assim, sem burocracia.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5571984739492" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-transform hover:-translate-y-1 z-50 flex items-center justify-center">
+        <i class="ph-fill ph-whatsapp-logo text-[35px]"></i>
+    </a>
+
+</body>
+</html>
